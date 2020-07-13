@@ -13,12 +13,9 @@ export default class extends Document {
       <html lang="en" dir="ltr">
         <script src="https://cdn.onesignal.com/sdks/OneSignalSDKWorker.js" />
 
-        <script
-          src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
-          async=""
-        ></script>
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async="" />
 
-        <script type="text/javascript" src="/script.js"></script>
+        <script type="text/javascript" src="/script.js" />
 
         <Head>
           <meta name="application-name" content={APP_NAME} />
