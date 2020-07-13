@@ -11,9 +11,7 @@ export default class extends Document {
   render() {
     return (
       <html lang="en" dir="ltr">
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDKWorker.js" />
-
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async="" />
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" />
 
         <script type="text/javascript" src="/script.js" />
 
