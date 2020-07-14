@@ -11,9 +11,7 @@ export default class extends Document {
   render() {
     return (
       <html lang="en" dir="ltr">
-        {/* <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" /> */}
-
-        <script src="https://sdki.truepush.com/sdk/v2.0.2/app.js" />
+        <script type="text/javascript" src="/sdk.js" />
         <script type="text/javascript" src="/test.js" />
 
         <Head>
