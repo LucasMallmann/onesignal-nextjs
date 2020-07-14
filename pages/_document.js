@@ -13,11 +13,7 @@ export default class extends Document {
       <html lang="en" dir="ltr">
         {/* <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" /> */}
 
-        <script
-          type="application/javascript"
-          src="https://sdki.truepush.com/sdk/v2.0.2/app.js"
-          async
-        />
+        <script src="https://sdki.truepush.com/sdk/v2.0.2/app.js" />
         <script type="text/javascript" src="/test.js" />
 
         <Head>
