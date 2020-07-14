@@ -7,6 +7,15 @@ OneSignal.push(function () {
   });
 
   OneSignal.on("subscriptionChange", function (isSubscribed) {
-    console.log("changing subscription: ", isSubscribed);
+    console.log("changing subscription ", isSubscribed);
+
+    if (isSubscribed) {
+      // The user is subscribed
+      //   Either the user subscribed for the first time
+      //   Or the user was subscribed -> unsubscribed -> subscribed
+      OneSignal.push(function () {
+        OneSignal.setExternalUserId(myCustomUniqueUserId);
+      });
+    }
   });
 });
