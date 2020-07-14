@@ -9,7 +9,9 @@ OneSignal.push(function () {
   OneSignal.on("subscriptionChange", function (isSubscribed) {
     console.log("changing subscription ", isSubscribed);
 
-    console.log("user external id: ", OneSignal.getExternalUserId());
+    OneSignal.getExternalUserId().then((id) =>
+      console.log("External user id is: ", id)
+    );
 
     if (isSubscribed) {
       // The user is subscribed
