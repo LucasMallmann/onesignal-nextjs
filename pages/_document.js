@@ -11,8 +11,8 @@ export default class extends Document {
   render() {
     return (
       <html lang="en" dir="ltr">
-        <script type="text/javascript" src="/sdk.js" />
-        <script type="text/javascript" src="/test.js" />
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" />
+        <script type="text/javascript" src="/script.js" />
 
         <Head>
           <meta name="application-name" content={APP_NAME} />
