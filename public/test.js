@@ -1,4 +1,4 @@
-const truepush = window.truepush || [];
+let truepush = window.truepush || [];
 truepush.push(function () {
   truepush.Init(
     {
