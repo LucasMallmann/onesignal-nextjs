@@ -1,29 +1,42 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useEffect } from "react";
+
+import { Form } from "@unform/web";
+import Input from "../components/Input";
 
 export default function Home() {
-  useEffect(() => {
-    window.OneSignal.getExternalUserId().then((id) =>
-      console.log("External user id is: ", id)
-    );
-  }, []);
+  const handleSubmit = async ({ email, password }) => {
+    let id = "";
+
+    if (email === "lucas@mallmann.com" && password === "123213") {
+      id = "5f0e3631ea549d721d2baffa";
+    } else if (email === "joao@email.com" && password === "123213") {
+      id = "5f0e27fe0f26d860f7058cd2";
+    } else {
+      console.log("no user found");
+      return;
+    }
+
+    OneSignal.push(function () {
+      OneSignal.setExternalUserId(id);
+    });
+  };
 
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Create Next App | Login</title>
       </Head>
 
-      <main>
-        <Link href="/login">
-          <a>Login</a>
-        </Link>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </main>
+      <Link href="/">
+        <a>Home</a>
+      </Link>
+
+      <Form onSubmit={handleSubmit}>
+        <Input name="email" type="text" />
+        <Input name="password" type="password" />
+        <button type="submit">Sign in</button>
+      </Form>
 
       <style jsx>{`
         .container {
