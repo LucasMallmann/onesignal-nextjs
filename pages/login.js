@@ -8,17 +8,23 @@ export default function Home() {
   const handleSubmit = async ({ email, password }) => {
     let id = "";
 
-    if (email === "lucas@mallmann.com" && password === "123213") {
+    if (email === "lucas@mallmann.com" && password === "123123") {
       id = "5f0e3631ea549d721d2baffa";
-    } else if (email === "joao@email.com" && password === "123213") {
+    } else if (email === "joao@email.com" && password === "123123") {
       id = "5f0e27fe0f26d860f7058cd2";
     } else {
       console.log("no user found");
       return;
     }
 
-    OneSignal.push(function () {
-      OneSignal.setExternalUserId(id);
+    window.OneSignal.push(function () {
+      window.OneSignal.setExternalUserId(id);
+    });
+  };
+
+  const handleLogout = () => {
+    window.OneSignal.push(function () {
+      window.OneSignal.removeExternalUserId();
     });
   };
 
@@ -37,6 +43,12 @@ export default function Home() {
         <Input name="password" type="password" />
         <button type="submit">Sign in</button>
       </Form>
+
+      <div>
+        <button type="button" onClick={handleLogout}>
+          Logout
+        </button>
+      </div>
 
       <style jsx>{`
         .container {
